@@ -29,7 +29,7 @@ using namespace std;
 
       unsigned char pixel[1000][1000][3];
 
-      void escrevaPixel(string Copia);
+      void escreverPixel(string Copia);
 
         string getNum_Magico();
         void setNum_Magico(string num_Magico);
