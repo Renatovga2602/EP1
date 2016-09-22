@@ -2,8 +2,7 @@
 #define FILTROPOLARIZADO_HPP
   #include "Filtros.hpp"
 
-class FiltroPolarizado :
-public Filtros{
+class FiltroPolarizado :public Filtros{
 public:
     FiltroPolarizado();
     ~FiltroPolarizado();
