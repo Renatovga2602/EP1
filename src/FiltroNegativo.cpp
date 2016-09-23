@@ -1,9 +1,8 @@
 #include "../inc/FiltroNegativo.hpp"
 #include <iostream>
 
-FiltroNegativo::FiltroNegativo(){
-}
-FiltroNegativo::~FiltroNegativo(){}
+FiltroNegativo::FiltroNegativo(){}
+	FiltroNegativo::~FiltroNegativo(){}
 void FiltroNegativo::aplicarFiltros(Imagem &img){
   int x;
   int z;
