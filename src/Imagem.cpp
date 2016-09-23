@@ -1,6 +1,7 @@
-#include < iostream >
-#include < string >
-#include < fstream >
+#include <iostream>
+#include <string>
+#include <fstream>
+
 
   #include "../inc/Imagem.hpp"
 
@@ -12,7 +13,7 @@ ppmOriginal = "doc/"+ imagemFile+".ppm";
 ler.open(ppmOriginal.c_str());
 
     while(!ler.is_open()){
-      cout << "O arquivo não foi encontrado. Por favor entre com o arquivo '.ppm'valido"
+      cout << "O arquivo não foi encontrado. Por favor entre com o arquivo '.ppm'valido";
       cin >> ppmOriginal;
 
       ppmOriginal= "doc/"+ppmOriginal+".ppm";
@@ -22,6 +23,7 @@ ler.open(ppmOriginal.c_str());
         while (num_Magico != "P3" && num_Magico !="P3"){
           cout << "Imagens do tipo incorreto: ";
           cin >> ppmOriginal;
+
           ppmOriginal = "doc/"+ ppmOriginal+ ".ppm";
           ler.open(ppmOriginal.c_str());
             lerCabecalho();
@@ -46,46 +48,44 @@ ler.get(px);
         }
     }
 }
-void Imagem::escreverPixel(string copiaImagem){
-  int x;
-  int z;
 
-  ppmCopia = "doc/"+copiaImagem+".ppm";
-    escrever.open(ppmCopia.c_str());
-    escrever<< num_Magico << endl;
-    escrever<< altura<<"   "<< largura<< endl;
-    escrever << corTotal << endl;
-
-for(i=0; i< largura; i++){
-  for(j=0; j < altura; j++){
-    escrever << pixel [x][z][1];
-    escrever << pixel [x][z][2];
-    escrever << pixel [x][z][3];
-        }
-    }
-}
 void Imagem::lerCabecalho(){
   string cabecalho;
-  int informacoes = 0;
+  int informacoes=0;
   ifstream aux(ppmOriginal.c_str());
+getline(ler, cabecalho);
+  while(cabecalho != "255"){
+    if(cabecalho[0] !='#'){
+      if(informacoes ==0) aux>>num_Magico;
+      if (informacoes ==1) {aux >> altura;aux >> largura;}
+        informacoes++;
 
-  getline(ler, cabecalho);
-    while(cabecalho != "255"){
-      if(cabecalho[0] != '#'){
-        if(informacoes ==0)
-        aux >> num_Magico;
-        if (informacoes ==1)
-        { aux >> altura;
-          aux >> largura;}
-            informacoes++;
-          }
+      }
 
-  getline(aux, cabecalho);
-  getline(ler, cabecalho);
-  }
-corTotal= 255;
-
+    getline(aux, cabecalho);
+    getline (ler, cabecalho);
 }
+corTotal= 255;
+}
+
+string Imagem::escreverPixel(string imagemCopia){
+  ppmCopia = "doc/"+ imagemCopia +".ppm";
+    escrever.open(ppmCopia.c_str());
+      escrever << num_Magico<< endl;
+      escrever << altura << " "<<largura << endl;
+      escrever << corTotal << endl;
+int x,z;
+for (x=0;x < largura; x++){
+  for(z=0;z < altura; z++){
+    escrever << pixel [x][z][1];escrever << pixel [x][z][2];escrever << pixel [x][z][3];
+        }
+    }
+string sms= "Novo arquivo foi criado";
+return sms;
+
+  }
+
+
 Imagem::~Imagem(){
                     }
 string Imagem::getNum_Magico(){

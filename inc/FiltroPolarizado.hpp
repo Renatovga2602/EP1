@@ -6,7 +6,7 @@ class FiltroPolarizado :public Filtros{
 public:
     FiltroPolarizado();
     ~FiltroPolarizado();
-        void aplicarFiltros(Imagem && imagem);
+        void aplicarFiltros(Imagem &imagem);
 
 
 };

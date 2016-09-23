@@ -1,9 +1,9 @@
 #ifndef IMAGEM_HPP
 #define IMAGEM_HPP
 
-#include < iostream >
-#include < fstream >
-#include < string >
+#include <iostream>
+#include <fstream>
+#include <string>
 
 using namespace std;
   class Imagem {
@@ -29,7 +29,7 @@ using namespace std;
 
       unsigned char pixel[1000][1000][3];
 
-      void escreverPixel(string Copia);
+      string escreverPixel(string Copia);
 
         string getNum_Magico();
         void setNum_Magico(string num_Magico);

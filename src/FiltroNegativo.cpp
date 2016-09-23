@@ -1,11 +1,10 @@
 #include "../inc/FiltroNegativo.hpp"
-#include < iostream >
+#include <iostream>
 
 FiltroNegativo::FiltroNegativo(){
 }
-FiltroNegativo::~FiltroNegativo(){
-
-}void FiltroNegativo::aplicarFiltros(Imagem &img){
+FiltroNegativo::~FiltroNegativo(){}
+void FiltroNegativo::aplicarFiltros(Imagem &img){
   int x;
   int z;
   Imagem* imagem = &img;
