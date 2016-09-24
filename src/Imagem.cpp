@@ -20,8 +20,8 @@ ler.open(ppmOriginal.c_str());
       ler.open(ppmOriginal.c_str());
 
     } lerCabecalho();
-        while (num_Magico != "P3" && num_Magico !="P3"){
-          cout << "Imagens do tipo incorreto: ";
+        while (num_Magico != "P6" && num_Magico !="P3"){
+          cout << "\a\aImagens do tipo incorreto: ";
           cin >> ppmOriginal;
 
           ppmOriginal = "doc/"+ ppmOriginal+ ".ppm";
