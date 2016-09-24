@@ -12,21 +12,23 @@ int main (){
 
   int menu;
 
-  cout << "****************************************************************************\n" << endl;
+  cout << "------------------------------------------------------------------------------\n" << endl;
   cout << "\t\t\t\v    FILTROS DE IMAGEM EP1    \v\t\t\n" << endl;
-  cout << "****************************************************************************"<<endl;
+  cout << "------------------------------------------------------------------------------"<<endl;
 
-  cout << "\n-> Primeiro: Seu arquivo .ppm deve estar na pasta /doc.\n"<< endl;
-  cout << "\n-> Segundo: Seu novo arquivo estara na pasta /doc.\n" << endl << endl;
+  cout << "\n-> Seu arquivo .ppm deve estar na pasta /doc.\n"<< endl;
+  cout << "\n-> Seu novo arquivo estara na pasta /doc.\n" << endl << endl;
+  cout << "------------------------------------------------------------------------------"<<endl;
 
-  cout << "-> Digite o nome do seu arquivo .ppm: "; cin >> imagemFile;
+  cout << "\n-> Digite o nome do seu arquivo .ppm: "; cin >> imagemFile;
+    cout<<"------------------------------------------------------------------------------"<< endl;
     imagem = new Imagem(imagemFile);
 
   cout << endl;
-      cout << "Escolha o Filtro que ira usar: " <<endl;
-        cout << "1-Filtro Negativo"<<endl;
-          cout << "2-Filtro Polarizado"<<endl;
-            cout << "3-Filtro Preto e Branco\n"<<endl;
+      cout << "\t\t\tEscolha o Filtro que ira usar: \n\n" <<endl;
+        cout << "1-Filtro Negativo: (converte as cores positiva da imagem em negativas).\n\t"<<endl;
+          cout << "2-Filtro Polarizado: (Permite mais nitidez e conforto visual da imagem).\n\t"<<endl;
+            cout << "3-Filtro Preto e Branco: (tons de preto e branco).\t\n"<<endl;
               cin >> menu;
                 cout << endl;
 
