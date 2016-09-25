@@ -27,20 +27,20 @@ using namespace std;
       Imagem(string imagemFile);
       ~Imagem();
 
-      unsigned char pixel[1000][1000][3];
+      unsigned char pixel[1000][1000][4];
 
       string escreverPixel(string Copia);
 
         string getNum_Magico();
-        void setNum_Magico(string num_Magico);
+          void setNum_Magico(string num_Magico);
 
         int getAltura();
-        void setAltura(int altura);
+          void setAltura(int altura);
 
         int getLargura();
-        void setLargura(int largura);
+          void setLargura(int largura);
 
         int getCorTotal();
-        void setCotTotal(int corTotal);
+          void setCotTotal(int corTotal);
 };
 #endif

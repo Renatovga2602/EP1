@@ -26,6 +26,11 @@ ler.open(ppmOriginal.c_str());
 
           ppmOriginal = "doc/"+ ppmOriginal+ ".ppm";
           ler.open(ppmOriginal.c_str());
+while(ler.is_open()){
+  cout<< "Imagem de tipo incorreto, entre com um valido: "<< endl;
+    cin >> ppmOriginal; ppmOriginal="doc/" + ppmOriginal+ ".ppm";
+      ler.open(ppmOriginal.c_str());
+}
             lerCabecalho();
 
         }lerPixel();}
@@ -38,12 +43,12 @@ void Imagem::lerPixel(){
     for(x=0; x< largura; x++){
         for(z=0; z< altura; z++){
           ler.get(px);
-          pixel[x][z][1]=(unsigned char) px;
+          pixel[x][z][1]=(int) px;
 
 ler.get(px);
-  pixel[x][z][2]=(unsigned char) px;
+  pixel[x][z][2]=(int) px;
 ler.get(px);
-  pixel[x][z][3]=(unsigned char) px;
+  pixel[x][z][3]=(int) px;
 
         }
     }
